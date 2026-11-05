@@ -1,0 +1,50 @@
+src/
+├─ app/
+│  │
+│  │
+│  ├── _layout.tsx    ← Layout raíz (Slot/Stack global 
+│  │                           + AuthProvider + ThemeProvider) 
+│  ├── index.tsx      ← Pantalla de redirección/splash inicial 
+│  │ 
+│  ├── (auth)/             ← Grupo de autenticación pública (Stack) 
+│  │    ├── _layout.tsx 
+│  │    ├── login.tsx      ← L01: Pantalla de Iniciar Sesión 
+│  │    └── register.tsx   ← L01: Pantalla de Registro
+│  │ 
+│  ├── (vecino)/
+│  │    ├── _layout.tsx        ← Layour Vecino 
+│  │    ├── index.tsx          ← Tab 1: Mapa general y reportes
+│  │    │                             cercanos (M01-M04) 
+│  │    ├── reportar/          ← Tab2: Reportar (Stack) 
+│  │    │      └── _layout.tsx   ← STACK: Reportar y Cercanos 
+│  │    │      ├── index.tsx     ← Crear reporte nuevo 
+│  │    │      └── cercanos.tsx  ← Reportes cercanos
+│  │    ├── mis-reportes.tsx   ← Tab 3: Lista de mis reclamos
+│  │    ├── perfil.tsx         ← Tab 4: Configuración 
+│  │    │                           y notificaciones (N02) 
+│  │    └── reporte/ 
+│  │          └── [id].tsx   ← Pantalla Stack: Detalle reclamo
+│  │                                  y QR (R02, R03, R06) 
+│  │
+│  └─ (operador)/
+│       ├── _layout.tsx   ← Layout Operador del municipio 
+│       ├── index.tsx     ← Tab 1: Bandeja de entrada de 
+│       │                          reclamos por zona (OP01-OP04) 
+│       ├── mapa.tsx      ← Tab 2: Mapa operativo de 
+│       │                          cuadrillas y zonas (Z01, Z03) 
+│       ├── perfil.tsx    ← Tab 3: Datos del operador y salir 
+│       └── reporte/ 
+│             └── [id].tsx ← Pantalla Stack: Gestión, cambio de 
+│                               estado y cuadrilla (OP05-OP09)
+│
+├── context/ 
+│    └── auth-context.tsx    ← Proveedor global de sesión y rol
+├── constants/ 
+│    └── theme.ts            ← Provee colors y fonts
+├── components/              ← Componentes de uso global
+├── helpers/
+├── hooks/
+├── mocks/
+├── services/
+├── types/
+└── utils/
